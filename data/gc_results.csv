@@ -1,2 +1,2 @@
-id,length,gc_percent
-OR780016.1,357,33.61
+id,length,gc_percent,gc_rich
+OR780016.1,357,33.61,False

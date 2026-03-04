@@ -28,7 +28,14 @@ for record in SeqIO.parse(str(FASTA_FILE), "fasta"):
 
 # Turn list into a table and save
 df = pd.DataFrame(records)
+
+# Mark GC‑rich sequences (GC >= 60%)
+df["gc_rich"] = df["gc_percent"] >= 60.0
+
 df.to_csv(OUTPUT_CSV, index=False)
 
 print(df)
+print("\nGC‑rich sequences (GC >= 60%):")
+print(df[df["gc_rich"]])
 print(f"\nSaved results to: {OUTPUT_CSV}")
+
